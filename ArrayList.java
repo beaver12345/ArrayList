@@ -20,18 +20,41 @@ public class ArrayList {
 	public int get(int index) {
 		
 		if (index > size - 1)
-			throws new Exception;
+			throws new IllegalArgumentException();
 
 		return arr[index];
 	}
 	
 	public void add(int value, int index) {
+		if (index > size)
+			throws new IllegalArgumentException();
 		size++;
+		if (size >= arr.length)
+			arr = enlarge();
 
+		for (int i = index + 1; i < size - 1; i++) {
+			int temp = arr[i];
+			arr[i] = arr[i-1];
+			arr[i+1] = temp;
+		}
+
+		arr[index] = value;
+
+		
 	}
 
 	public void add(int value) {
 		add(value, size);
+	}
+
+	private int[] enlarge() {
+		int[] array = new int[arr.length * 2];
+
+		for (int i = 0; i < arr.length; i++) {
+			array[i] = arr[i];
+		}
+
+		return array;
 	}
 
 	public void set(int value, int index) {
@@ -43,14 +66,12 @@ public class ArrayList {
 		//size--;
 		for (int i = index; i < size - 1; i++) {
 			int temp = arr[i+1];
+
 		}
 	}
 
 	public boolean isEmpty() {
-		boolean empty = false;
-		if (size == 0)
-			empty = true;
-		return empty;
+		return size == 0;
 	}
 	
 	// sorting method on field arr
