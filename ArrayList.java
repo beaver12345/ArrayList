@@ -56,15 +56,17 @@ public class ArrayList {
 	}
 
 	public void set(int value, int index) {
-		if (index <= size)
+		if (index >= size)
+			throws new IllegalArgumentException();
 		arr[index] = value;
 	}
 
 	public void remove(int index) {
-		//size--;
-		for (int i = index; i < size - 1; i++) {
-			int temp = arr[i+1];
-			arr[i] = 
+		if (index >= size)
+			throws new IllegalArgumentException();
+		size--;
+		for (int i = index; i < size; i++) {
+			arr[i] = arr[i+1];
 		}
 	}
 
