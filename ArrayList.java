@@ -92,5 +92,14 @@ public class ArrayList {
 		return size;
 	}
 	
-
+	public String toString() {
+		String result = "[";
+		if(this.size > 0) {
+			result += arr[0];
+		}
+		for(int i = 1; i < this.size; i++) {
+			result += ", " + this.arr[i];
+		}
+		return result + "]";
+	}
 }
