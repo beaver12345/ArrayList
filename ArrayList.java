@@ -20,14 +20,14 @@ public class ArrayList {
 	public int get(int index) {
 		
 		if (index > size - 1)
-			throws new IllegalArgumentException();
+			throw new IllegalArgumentException();
 
 		return arr[index];
 	}
 	
 	public void add(int value, int index) {
 		if (index > size)
-			throws new IllegalArgumentException();
+			throw new IllegalArgumentException();
 		size++;
 		if (size >= arr.length)
 			arr = enlarge();
@@ -57,13 +57,13 @@ public class ArrayList {
 
 	public void set(int value, int index) {
 		if (index >= size)
-			throws new IllegalArgumentException();
+			throw new IllegalArgumentException();
 		arr[index] = value;
 	}
 
 	public void remove(int index) {
 		if (index >= size)
-			throws new IllegalArgumentException();
+			throw new IllegalArgumentException();
 		size--;
 		for (int i = index; i < size; i++) {
 			arr[i] = arr[i+1];
