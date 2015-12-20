@@ -32,10 +32,8 @@ public class ArrayList {
 		if (size >= arr.length)
 			arr = enlarge();
 
-		for (int i = index + 1; i < size - 1; i++) {
-			int temp = arr[i];
+		for (int i = size; i > index; i--) {
 			arr[i] = arr[i-1];
-			arr[i+1] = temp;
 		}
 
 		arr[index] = value;
@@ -66,7 +64,7 @@ public class ArrayList {
 		//size--;
 		for (int i = index; i < size - 1; i++) {
 			int temp = arr[i+1];
-
+			arr[i] = 
 		}
 	}
 
